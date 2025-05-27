@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: custom-frontend:1.0.0
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: custom-backend:1.0.0
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ghc_hack
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: rootpassword
+    depends_on:
+      - db
+
+  db:
+    image: custom-mysql:1.0.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ghc_hack
