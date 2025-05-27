@@ -1,0 +1,12 @@
+FROM mysql:8.0
+
+# Set environment variables for MySQL root password and database name
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=ghc_hack
+
+# Copy your SQL initialization script(s) into the Docker image
+# Place your schema/data SQL file(s) in the same directory as this Dockerfile
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Expose MySQL port
+EXPOSE 3306
