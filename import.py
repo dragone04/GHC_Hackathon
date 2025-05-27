@@ -34,7 +34,7 @@ def main():
     categories = set()
     cities = set()
     jobs = set()
-    with open('data/italian_credit_card_transactions_subset.csv', newline='', encoding='utf-8') as csvfile:
+    with open('data/2userSubSet.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             categories.add(row['category'])
@@ -64,7 +64,7 @@ def main():
     job_map = {name: jid for jid, name in cursor.fetchall()}
     print("Look up end")
     print("Second scan start")
-    with open('data/italian_credit_card_transactions_subset.csv', newline='', encoding='utf-8') as csvfile:
+    with open('data/2userSubSet.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for i, row in enumerate(reader):
             print("Processing row:", i + 1)
