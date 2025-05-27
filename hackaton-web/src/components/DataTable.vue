@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.id">
+        <tr v-for="item,index in items" :key="item.id">
           <td>{{ item.transNum }}</td>
           <td>{{ item.amount }}</td>
           <td>{{ item.transdate }}</td>
@@ -25,9 +25,9 @@
           <td>{{ item.customer.last }}</td>
           <td>{{ item.customer.city.cityName }}</td>
           <td>
-            <button class="btn btn-warning btn-sm" @click="editItem(item.id)">Edit</button>
+            <button class="btn btn-warning btn-sm" @click="editItem(index)">Edit</button>
           </td>
-          <td><button class="btn btn-danger btn-sm" @click="deleteItem(item.id)">Delete</button></td>
+          <td><button class="btn btn-danger btn-sm" @click="deleteItem(index)">Delete</button></td>
         </tr>
       </tbody>
     </table>
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     getData () {
-      axios.get('/data/data.json')
+      axios.get('/data/data.json?' +  localStorage.getItem('id'))
         .then(response => {
           this.items = response.data;
           console.log(response.data);
@@ -76,11 +76,11 @@ export default {
       this.sortOrder = this.sortKey === key && this.sortOrder === 'asc' ? 'desc' : 'asc';
       this.sortKey = key;
     },
-    editItem(id) {
+    editItem(idGo) {
       console.log('Editing item with id:', id);
-      this.$router.push({ name: 'RowDetail', params: { id } });
+      this.$router.push({ name: 'RowDetail', params: { id: idGo } });
     },
-    deleteItem(id) {
+    deleteItem(idGo) {
       this.items = this.items.filter(item => item.id !== id);
     }
   }

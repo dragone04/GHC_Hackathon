@@ -33,17 +33,20 @@ export default {
         const users = [
       {
         "username": "user1",
+        "id": 11,
         "password": "password1"
       },
       {
         "username": "user2",
+        "id":12,
         "password": "password2"
       }
     ];        
       
-        const user = users.find(user => user.username === this.username && user.password === this.password);
+        const user = users.find(user => user.username === this.username);
         console.log(user)
         if (user) {
+          localStorage.setItem('id', user.id);
           this.$router.push({ name: 'home' });
         } else {
           this.errorMessage = 'Invalid username or password';
