@@ -26,7 +26,7 @@ def main():
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor()
     cursor.execute("DELETE FROM transaction")
-    cursor.execute("DELETE FROM customer")
+    # cursor.execute("DELETE FROM customer")
     cursor.execute("DELETE FROM category")
     cursor.execute("DELETE FROM city")
     cursor.execute("DELETE FROM job")
