@@ -27,8 +27,8 @@ public class JobService {
 
     public Optional<Job> updateOne(Integer id, Job update) {
         return repository.findById(id).map(existing -> {
-            update.setJobId(id);
-            return repository.save(update);
+            existing.setJobName(update.getJobName());
+            return repository.save(existing);
         });
     }
 

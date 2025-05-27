@@ -30,8 +30,8 @@ public class CategoryService {
 
     public Optional<Category> updateOne(Integer id, Category update) {
         return repository.findById(id).map(existing -> {
-            update.setCategoryId(id);
-            return repository.save(update);
+            existing.setCategoryName(update.getCategoryName());
+            return repository.save(existing);
         });
     }
 

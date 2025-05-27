@@ -1,10 +1,7 @@
 package it.nexi.hackathon.controller;
 
 import it.nexi.hackathon.entity.Category;
-import it.nexi.hackathon.entity.Category;
-import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.service.CategoryService;
-import it.nexi.hackathon.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

@@ -19,7 +19,6 @@ public class CityService {
         this.repository = repository;
     }
 
-    // Add methods to interact with the transactionRepository as needed
     public Iterable<City> findAll() {
         return repository.findAll();
     }
@@ -30,7 +29,7 @@ public class CityService {
 
     public Optional<City> updateOne(Integer id, City update) {
         return repository.findById(id).map(existing -> {
-            update.setCityId(id);
+            existing.setCityName(update.getCityName());
             return repository.save(update);
         });
     }

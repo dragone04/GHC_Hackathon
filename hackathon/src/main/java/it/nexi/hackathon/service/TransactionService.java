@@ -15,7 +15,6 @@ public class TransactionService {
         this.repository = repository;
     }
 
-    // Add methods to interact with the transactionRepository as needed
     public Iterable<Transaction> findAll() {
         return repository.findAll();
     }

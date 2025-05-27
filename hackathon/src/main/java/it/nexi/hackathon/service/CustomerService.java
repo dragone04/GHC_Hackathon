@@ -30,8 +30,12 @@ public class CustomerService {
 
     public Optional<Customer> updateOne(Integer id, Customer update) {
         return repository.findById(id).map(existing -> {
-            update.setCustomerId(id);
-            return repository.save(update);
+            existing.setCity(update.getCity());
+            existing.setDob(update.getDob());
+            existing.setGender(update.getGender());
+            existing.setFirst(update.getFirst());
+            existing.setLast(update.getLast());
+            return repository.save(existing);
         });
     }
 

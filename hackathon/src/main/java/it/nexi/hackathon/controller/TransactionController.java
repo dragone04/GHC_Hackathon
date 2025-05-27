@@ -1,6 +1,5 @@
 package it.nexi.hackathon.controller;
 
-import it.nexi.hackathon.entity.Job;
 import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.service.TransactionService;
 import org.slf4j.Logger;
