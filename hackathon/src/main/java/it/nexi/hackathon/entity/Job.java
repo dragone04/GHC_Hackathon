@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class City {
+public class Job {
 
     @Id
-    @Column(name = "city_id")
-    private Integer cityId;
+    @Column(name = "job_id")
+    private Integer jobId;
 
-    @Column(name = "city_name", nullable = false)
-    private String cityName;
+    @Column(name = "job_name", nullable = false)
+    private String jobName;
 
 }

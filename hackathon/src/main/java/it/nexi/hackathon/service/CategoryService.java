@@ -1,10 +1,13 @@
 package it.nexi.hackathon.service;
 
 import it.nexi.hackathon.entity.Category;
+import it.nexi.hackathon.entity.Job;
 import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.repository.CategoryRepository;
 import it.nexi.hackathon.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 
 @Service
@@ -20,4 +23,20 @@ public class CategoryService {
     public Iterable<Category> findAll() {
         return repository.findAll();
     }
+
+    public Optional<Category> findOne(Integer id) {
+        return repository.findById(id);
+    }
+
+    public Optional<Category> updateOne(Integer id, Category update) {
+        return repository.findById(id).map(existing -> {
+            update.setCategoryId(id);
+            return repository.save(update);
+        });
+    }
+
+    public void deleteOne(Integer id) {
+        repository.deleteById(id);
+    }
+
 }
