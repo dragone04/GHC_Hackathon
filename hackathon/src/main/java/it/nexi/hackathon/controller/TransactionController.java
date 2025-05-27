@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
 @RestController
 public class TransactionController {
 
@@ -23,10 +22,8 @@ public class TransactionController {
 
     @GetMapping(value = "/getAllTransactions")
     public @ResponseBody Iterable<Transaction> getAllTransactions() {
-        Iterable<Transaction> res = this.transactionService.findAllAsList();
 
-        logger.info(res.toString());
-        return res;
+        return this.transactionService.findAll();
 
     }
 }
