@@ -1,16 +1,16 @@
 <template>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form @submit.prevent="handleLogin">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" v-model="username" id="username" class="form-control" required />
+  <div class="container">
+    <h2 class="text-center mt-5">Login</h2>
+    <form @submit.prevent="handleLogin" class="mt-4">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" v-model="username" class="form-control" required />
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" v-model="password" id="password" class="form-control" required />
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" v-model="password" class="form-control" required />
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary" v-on:click="test">Login</button>
     </form>
     <div v-if="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
   </div>
@@ -28,29 +28,40 @@ export default {
     };
   },
   methods: {
-    async handleLogin() {
-      try {
-        const response = await axios.get('/data/login.json');
-        const users = response.data;
-
-        const user = users.find(user => user.username === this.username && user.password === this.password);
+    test () {
+      console.log('test');
+        const users = [
+      {
+        "username": "user1",
+        "id": 11,
+        "password": "password1"
+      },
+      {
+        "username": "user2",
+        "id":12,
+        "password": "password2"
+      }
+    ];        
+      
+        const user = users.find(user => user.username === this.username);
+        console.log(user)
         if (user) {
+          localStorage.setItem('id', user.id);
           this.$router.push({ name: 'home' });
         } else {
           this.errorMessage = 'Invalid username or password';
         }
-      } catch (error) {
-        this.errorMessage = 'Error fetching login data';
-      }
-    }
+      console.log('test');
+    },
+
+
   }
 };
 </script>
 
 <style scoped>
-.login-container {
+.container {
   max-width: 400px;
   margin: auto;
-  padding: 20px;
 }
 </style>
