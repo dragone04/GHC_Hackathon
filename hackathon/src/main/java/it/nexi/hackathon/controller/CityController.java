@@ -1,15 +1,13 @@
 package it.nexi.hackathon.controller;
 
 import it.nexi.hackathon.entity.City;
-import it.nexi.hackathon.entity.Transaction;
-import it.nexi.hackathon.service.CategoryService;
 import it.nexi.hackathon.service.CityService;
-import it.nexi.hackathon.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 
 @RestController
@@ -23,10 +21,30 @@ public class CityController {
         this.service = service;
     }
 
-    @GetMapping(value = "/getAllCities")
-    public @ResponseBody Iterable<City> getAllCities() {
+    @GetMapping(value = "/city/getAll")
+    public @ResponseBody Iterable<City> getAll() {
         return this.service.findAll();
 
+    }
+
+    @GetMapping("/city/{id}")
+    public ResponseEntity<City> getOne(@PathVariable Integer id) {
+        Optional<City> item = service.findOne(id);
+        return item.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/city/{id}")
+    public ResponseEntity<City> updateOne(@PathVariable Integer id, @RequestBody City updated) {
+        Optional<City> item = service.updateOne(id, updated);
+        return item.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/city/{id}")
+    public ResponseEntity<Void> deleteOne(@PathVariable Integer id) {
+        service.deleteOne(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

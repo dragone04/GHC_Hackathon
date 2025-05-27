@@ -1,14 +1,13 @@
 package it.nexi.hackathon.controller;
 
 import it.nexi.hackathon.entity.Category;
-import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.service.CategoryService;
-import it.nexi.hackathon.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 
 @RestController
@@ -22,9 +21,30 @@ public class CategoryController {
         this.service = service;
     }
 
-    @GetMapping(value = "/getAllCategories")
-    public @ResponseBody Iterable<Category> getAllCategories() {
+    @GetMapping(value = "/category/getAll")
+    public @ResponseBody Iterable<Category> getAll() {
         return this.service.findAll();
 
     }
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<Category> getOne(@PathVariable Integer id) {
+        Optional<Category> item = service.findOne(id);
+        return item.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/category/{id}")
+    public ResponseEntity<Category> updateOne(@PathVariable Integer id, @RequestBody Category updated) {
+        Optional<Category> item = service.updateOne(id, updated);
+        return item.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/category/{id}")
+    public ResponseEntity<Void> deleteOne(@PathVariable Integer id) {
+        service.deleteOne(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
