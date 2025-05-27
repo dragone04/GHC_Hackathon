@@ -1,12 +1,13 @@
 package it.nexi.hackathon.service;
 
-import it.nexi.hackathon.entity.Customer;
+import it.nexi.hackathon.entity.CategoryTransactionSummary;
 import it.nexi.hackathon.entity.Transaction;
+import it.nexi.hackathon.entity.YearMonthTransactionSummary;
 import it.nexi.hackathon.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,6 +47,15 @@ public class TransactionService {
 
     public void deleteOne(String id) {
         repository.deleteById(id);
+    }
+
+    //write a method to call repository sumAmountByCategoryAndCustomerAndDateRange
+    public List<CategoryTransactionSummary> sumAmountByCategoryAndCustomerAndDateRange(Integer customerId, LocalDate startDate, LocalDate endDate) {
+        return repository.sumAmountByCategoryAndCustomerAndDateRange(customerId, startDate, endDate);
+    }
+
+    public List<YearMonthTransactionSummary> sumAmountByYearAndMonthAndCustomerAndDateRange(Integer customerId, LocalDate startDate, LocalDate endDate) {
+        return repository.sumAmountByYearAndMonthAndCustomerAndDateRange(customerId, startDate, endDate);
     }
 
 }

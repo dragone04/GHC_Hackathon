@@ -1,6 +1,8 @@
 package it.nexi.hackathon.controller;
 
+import it.nexi.hackathon.entity.CategoryTransactionSummary;
 import it.nexi.hackathon.entity.Transaction;
+import it.nexi.hackathon.entity.YearMonthTransactionSummary;
 import it.nexi.hackathon.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:5173")
@@ -57,5 +58,16 @@ public class TransactionController {
         service.deleteOne(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping(value = "/transaction/sumAmountByCategoryAndCustomerAndDateRange/{customerId}/{startDate}/{endDate}")
+    public @ResponseBody Iterable<CategoryTransactionSummary> sumAmountByCategoryAndCustomerAndDateRange(@PathVariable Integer customerId, @PathVariable LocalDate startDate, @PathVariable LocalDate endDate) {
+        return this.service.sumAmountByCategoryAndCustomerAndDateRange(customerId, startDate, endDate);
+    }
+
+    @GetMapping(value = "/transaction/sumAmountByYearAndMonthAndCustomerAndDateRange/{customerId}/{startDate}/{endDate}")
+    public @ResponseBody Iterable<YearMonthTransactionSummary> sumAmountByYearAndMonthAndCustomerAndDateRange(@PathVariable Integer customerId, @PathVariable LocalDate startDate, @PathVariable LocalDate endDate) {
+        return this.service.sumAmountByYearAndMonthAndCustomerAndDateRange(customerId, startDate, endDate);
+    }
+
 
 }

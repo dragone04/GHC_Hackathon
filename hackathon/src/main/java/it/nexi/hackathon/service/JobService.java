@@ -1,6 +1,5 @@
 package it.nexi.hackathon.service;
 
-import it.nexi.hackathon.entity.Customer;
 import it.nexi.hackathon.entity.Job;
 import it.nexi.hackathon.repository.JobRepository;
 import org.springframework.stereotype.Service;

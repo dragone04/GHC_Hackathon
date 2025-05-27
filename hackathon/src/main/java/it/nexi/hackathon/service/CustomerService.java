@@ -1,10 +1,7 @@
 package it.nexi.hackathon.service;
 
-import it.nexi.hackathon.entity.City;
 import it.nexi.hackathon.entity.Customer;
-import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.repository.CustomerRepository;
-import it.nexi.hackathon.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
