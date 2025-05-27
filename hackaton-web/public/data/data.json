@@ -1,0 +1,253 @@
+[
+    {
+        "transNum": "0b242abb623afc578575680df30655b9",
+        "amount": 4.97,
+        "transDate": "2019-01-01",
+        "transTime": "00:00:18",
+        "category": {
+            "categoryId": 11,
+            "categoryName": "misc_net"
+        },
+        "customer": {
+            "customerId": 1,
+            "first": "Bianca",
+            "last": "lattanzi",
+            "gender": "F",
+            "dob": "1988-03-08T23:00:00.000+00:00",
+            "city": {
+                "cityId": 13,
+                "cityName": "Crema"
+            },
+            "job": {
+                "jobId": 13,
+                "jobName": "Psychology & Counseling"
+            }
+        }
+    },
+    {
+        "transNum": "189a841a0a8ba03058526bcfe566aab5",
+        "amount": 94.63,
+        "transDate": "2019-01-01",
+        "transTime": "00:04:08",
+        "category": {
+            "categoryId": 8,
+            "categoryName": "gas_transport"
+        },
+        "customer": {
+            "customerId": 6,
+            "first": "Bianca",
+            "last": "paolini",
+            "gender": "F",
+            "dob": "1961-06-18T23:00:00.000+00:00",
+            "city": {
+                "cityId": 18,
+                "cityName": "Campagna"
+            },
+            "job": {
+                "jobId": 11,
+                "jobName": "Accredited & Certified Professionals"
+            }
+        }
+    },
+    {
+        "transNum": "1f76529f8574734946361c461b024d99",
+        "amount": 107.23,
+        "transDate": "2019-01-01",
+        "transTime": "00:00:44",
+        "category": {
+            "categoryId": 7,
+            "categoryName": "grocery_pos"
+        },
+        "customer": {
+            "customerId": 2,
+            "first": "Martina",
+            "last": "freschi",
+            "gender": "F",
+            "dob": "1978-06-20T22:00:00.000+00:00",
+            "city": {
+                "cityId": 11,
+                "cityName": "Rimini"
+            },
+            "job": {
+                "jobId": 8,
+                "jobName": "School & Language Teaching"
+            }
+        }
+    },
+    {
+        "transNum": "3b9014ea8fb80bd65de0b1463b00b00e",
+        "amount": 198.39,
+        "transDate": "2019-01-01",
+        "transTime": "00:06:01",
+        "category": {
+            "categoryId": 7,
+            "categoryName": "grocery_pos"
+        },
+        "customer": {
+            "customerId": 10,
+            "first": "Silvia",
+            "last": "sarpieri",
+            "gender": "F",
+            "dob": "1974-03-27T23:00:00.000+00:00",
+            "city": {
+                "cityId": 12,
+                "cityName": "Partinico"
+            },
+            "job": {
+                "jobId": 11,
+                "jobName": "Accredited & Certified Professionals"
+            }
+        }
+    },
+    {
+        "transNum": "6b849c168bdad6f867558c3793159a81",
+        "amount": 45.00,
+        "transDate": "2019-01-01",
+        "transTime": "00:01:16",
+        "category": {
+            "categoryId": 8,
+            "categoryName": "gas_transport"
+        },
+        "customer": {
+            "customerId": 4,
+            "first": "Mauro",
+            "last": "lucchi",
+            "gender": "M",
+            "dob": "1967-01-11T23:00:00.000+00:00",
+            "city": {
+                "cityId": 19,
+                "cityName": "Leverano"
+            },
+            "job": {
+                "jobId": 11,
+                "jobName": "Accredited & Certified Professionals"
+            }
+        }
+    },
+    {
+        "transNum": "6d294ed2cc447d2c71c7171a3d54967c",
+        "amount": 71.65,
+        "transDate": "2019-01-01",
+        "transTime": "00:05:08",
+        "category": {
+            "categoryId": 8,
+            "categoryName": "gas_transport"
+        },
+        "customer": {
+            "customerId": 8,
+            "first": "Gualtiero",
+            "last": "lucchesini",
+            "gender": "M",
+            "dob": "1947-08-20T22:00:00.000+00:00",
+            "city": {
+                "cityId": 17,
+                "cityName": "Cittadella"
+            },
+            "job": {
+                "jobId": 14,
+                "jobName": "Product & Textile Design"
+            }
+        }
+    },
+    {
+        "transNum": "83ec1cc84142af6e2acf10c44949e720",
+        "amount": 44.54,
+        "transDate": "2019-01-01",
+        "transTime": "00:04:42",
+        "category": {
+            "categoryId": 9,
+            "categoryName": "grocery_net"
+        },
+        "customer": {
+            "customerId": 7,
+            "first": "Rosa",
+            "last": "Conte",
+            "gender": "F",
+            "dob": "1993-08-15T22:00:00.000+00:00",
+            "city": {
+                "cityId": 14,
+                "cityName": "Quarto"
+            },
+            "job": {
+                "jobId": 12,
+                "jobName": "Arboriculture Specialist"
+            }
+        }
+    },
+    {
+        "transNum": "a1a22d70485983eac12b5b88dad1cf95",
+        "amount": 220.11,
+        "transDate": "2019-01-01",
+        "transTime": "00:00:51",
+        "category": {
+            "categoryId": 10,
+            "categoryName": "entertainment"
+        },
+        "customer": {
+            "customerId": 3,
+            "first": "Giordano",
+            "last": "de florio",
+            "gender": "M",
+            "dob": "1962-01-18T23:00:00.000+00:00",
+            "city": {
+                "cityId": 15,
+                "cityName": "Riposto"
+            },
+            "job": {
+                "jobId": 9,
+                "jobName": "Executive & Officer Leadership"
+            }
+        }
+    },
+    {
+        "transNum": "a41d7549acf90789359a9aa5346dcb46",
+        "amount": 41.96,
+        "transDate": "2019-01-01",
+        "transTime": "00:03:06",
+        "category": {
+            "categoryId": 12,
+            "categoryName": "misc_pos"
+        },
+        "customer": {
+            "customerId": 5,
+            "first": "Teo",
+            "last": "poni",
+            "gender": "M",
+            "dob": "1986-03-27T23:00:00.000+00:00",
+            "city": {
+                "cityId": 16,
+                "cityName": "Casale Monferrato"
+            },
+            "job": {
+                "jobId": 11,
+                "jobName": "Accredited & Certified Professionals"
+            }
+        }
+    },
+    {
+        "transNum": "fc28024ce480f8ef21a32d64c93a29f5",
+        "amount": 4.27,
+        "transDate": "2019-01-01",
+        "transTime": "00:05:18",
+        "category": {
+            "categoryId": 12,
+            "categoryName": "misc_pos"
+        },
+        "customer": {
+            "customerId": 9,
+            "first": "Concetta",
+            "last": "di carlo",
+            "gender": "F",
+            "dob": "1941-03-06T22:00:00.000+00:00",
+            "city": {
+                "cityId": 20,
+                "cityName": "Fiorano Modenese"
+            },
+            "job": {
+                "jobId": 10,
+                "jobName": "Consulting & Advisory"
+            }
+        }
+    }
+]
+ 
