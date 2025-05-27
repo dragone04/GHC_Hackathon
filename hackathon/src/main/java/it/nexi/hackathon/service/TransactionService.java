@@ -1,5 +1,6 @@
 package it.nexi.hackathon.service;
 
+import it.nexi.hackathon.entity.Customer;
 import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public class TransactionService {
 
     public Iterable<Transaction> findAll() {
         return repository.findAll();
+    }
+
+    public Iterable<Transaction> findAllByCustomerId(Integer customerId) {
+        return repository.findTransactionByCustomerCustomerId(customerId);
     }
 
     public Optional<Transaction> findOne(String id) {

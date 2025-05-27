@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     getData () {
-      axios.get('/data/data.json')
+      axios.get('http://localhost:8080/transaction/getAll')
         .then(response => {
           this.items = response.data;
           console.log(response.data);

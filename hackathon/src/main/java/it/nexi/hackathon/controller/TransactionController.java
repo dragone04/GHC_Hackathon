@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController()
 public class TransactionController {
 
@@ -25,6 +25,12 @@ public class TransactionController {
     public @ResponseBody Iterable<Transaction> getAll() {
         return this.service.findAll();
     }
+
+    @GetMapping(value = "/transaction/getAll/{customerId}")
+    public @ResponseBody Iterable<Transaction> getAllById(@PathVariable Integer customerId) {
+        return this.service.findAllByCustomerId(customerId);
+    }
+
 
     @GetMapping("/transaction/{id}")
     public ResponseEntity<Transaction> getOne(@PathVariable String id) {
