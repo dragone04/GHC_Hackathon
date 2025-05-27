@@ -5,6 +5,8 @@ import it.nexi.hackathon.entity.Transaction;
 import it.nexi.hackathon.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -22,6 +24,10 @@ public class TransactionService {
 
     public Iterable<Transaction> findAllByCustomerId(Integer customerId) {
         return repository.findTransactionByCustomerCustomerId(customerId);
+    }
+
+    public Iterable<Transaction> findAllByCustomerIdAndDate(Integer customerId, LocalDate startDate, LocalDate endDate) {
+        return repository.findTransactionByCustomerCustomerIdAndTransDateBetween(customerId, startDate, endDate);
     }
 
     public Optional<Transaction> findOne(String id) {

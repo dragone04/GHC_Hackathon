@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:5173")
@@ -31,6 +33,10 @@ public class TransactionController {
         return this.service.findAllByCustomerId(customerId);
     }
 
+    @GetMapping(value = "/transaction/getAll/{customerId}/{startDate}/{endDate}")
+    public @ResponseBody Iterable<Transaction> getAllByIdAndDate(@PathVariable Integer customerId, @PathVariable LocalDate startDate, @PathVariable LocalDate endDate) {
+        return this.service.findAllByCustomerIdAndDate(customerId, startDate, endDate);
+    }
 
     @GetMapping("/transaction/{id}")
     public ResponseEntity<Transaction> getOne(@PathVariable String id) {
@@ -51,5 +57,5 @@ public class TransactionController {
         service.deleteOne(id);
         return ResponseEntity.noContent().build();
     }
-    
+
 }
