@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     getData () {
-      axios.get('http://localhost:8080/transaction/getAll')
+      axios.get('http://localhost:8080/transaction/getAll/' + localStorage.getItem('id'))
         .then(response => {
           this.items = response.data;
           console.log(response.data);
