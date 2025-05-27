@@ -1,0 +1,11 @@
+trans_num,amount,trans_date,trans_time,category,first,last,gender,dob,city,job
+0b242abb623afc578575680df30655b9,4.97,2019-01-01,00:00:18,misc_net,Bianca,lattanzi,F,1988-03-09,Crema,Psychology & Counseling
+1f76529f8574734946361c461b024d99,107.23,2019-01-01,00:00:44,grocery_pos,Martina,freschi,F,1978-06-21,Rimini,School & Language Teaching
+a1a22d70485983eac12b5b88dad1cf95,220.11,2019-01-01,00:00:51,entertainment,Giordano,de florio,M,1962-01-19,Riposto,Executive & Officer Leadership
+6b849c168bdad6f867558c3793159a81,45.0,2019-01-01,00:01:16,gas_transport,Mauro,lucchi,M,1967-01-12,Leverano,Accredited & Certified Professionals
+a41d7549acf90789359a9aa5346dcb46,41.96,2019-01-01,00:03:06,misc_pos,Teo,poni,M,1986-03-28,Casale Monferrato,Accredited & Certified Professionals
+189a841a0a8ba03058526bcfe566aab5,94.63,2019-01-01,00:04:08,gas_transport,Bianca,paolini,F,1961-06-19,Campagna,Accredited & Certified Professionals
+83ec1cc84142af6e2acf10c44949e720,44.54,2019-01-01,00:04:42,grocery_net,Rosa,Conte,F,1993-08-16,Quarto,Arboriculture Specialist
+6d294ed2cc447d2c71c7171a3d54967c,71.65,2019-01-01,00:05:08,gas_transport,Gualtiero,lucchesini,M,1947-08-21,Cittadella,Product & Textile Design
+fc28024ce480f8ef21a32d64c93a29f5,4.27,2019-01-01,00:05:18,misc_pos,Concetta,di carlo,F,1941-03-07,Fiorano Modenese,Consulting & Advisory
+3b9014ea8fb80bd65de0b1463b00b00e,198.39,2019-01-01,00:06:01,grocery_pos,Silvia,sarpieri,F,1974-03-28,Partinico,Accredited & Certified Professionals
